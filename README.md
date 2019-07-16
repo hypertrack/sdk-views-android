@@ -1,6 +1,6 @@
-# HyperTrack Quickstart for Android Views SDK
+# Android Views SDK
 
-## Integrate the Vies SDK
+## Integrate the Views SDK
  - [Add Hypertrack SDK](#step-1-add-hypertrack-views-sdk)
  - [Instantiate SDK](#step-2-instantiate-sdk)
  - [Get state](#step-3-get-state)
