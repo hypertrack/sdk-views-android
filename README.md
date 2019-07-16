@@ -1,6 +1,6 @@
 # Android Views SDK
 
-The Android Views SDK is used for getting live location and movement data for devices and trips directly to the app via HyperTrack's GraphQL server end point. This way, developers creating live location views using HyperTrack data can go serverless and their app users can directly get data securely and privately from the HyperTrack servers.
+The Android Views SDK is used for getting live location and movement data for devices and trips directly to your Android app. This module subscribes to HyperTrack's GraphQL server end points to get data streams and then renders it in useful callbacks for app developers to build beautiful tracking experiences. This helps developers creating live location views go serverless. Their app users can directly get data securely and privately from the HyperTrack servers.
 
 ## Integrate the Views SDK
  - [Add Views SDK](#step-1-add-views-sdk)
