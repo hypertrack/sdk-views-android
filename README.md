@@ -34,14 +34,61 @@ Pass `Context` reference to get SDK instance.
 #### Step 3. Get state.
 Get current state of tracked device
 ```
-   hypertrackView.getDeviceMovementStatus(deviceId, MyMovementStatusConsumer.getInstance());
+   hypertrackView.getDeviceMovementStatus(deviceId,
+                                  new Consumer<MovementStatus>() {
+                                      @Override
+                                      public void accept(MovementStatus movementStatus) {
+                                          Log.d(TAG, "Got movement status data " + movementStatus);
+                                      }
+                                  });;
 ```
+In callback, that you pass as a second argument, you'll receive [MovementStatus](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com)
+object that encapsulates various data describing device state.
+Check out [docs](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com) for data that is available.
 
 #### Step 4. Subscribe to updates.
 You can receive device state changes updates
 ```
-   hypertrackView.subscribeToDeviceUpdates(deviceId, MyDeviceUpdatesHandler.getInstance());
+   hypertrackView.subscribeToDeviceUpdates(deviceId,
+   new DeviceUpdatesHandler() {
+           @Override
+           public void onLocationUpdateReceived(@NonNull Location location) {
+               Log.d(TAG, "onLocationUpdateReceived: " + location);
+           }
+
+           @Override
+           public void onBatteryStateUpdateReceived(@BatteryState int i) {
+               Log.d(TAG, "onBatteryStateUpdateReceived: " + i);
+           }
+
+           @Override
+           public void onStatusUpdateReceived(@NonNull StatusUpdate statusUpdate) {
+               Log.d(TAG, "onStatusUpdateReceived: " + statusUpdate);
+           }
+
+           @Override
+           public void onTripUpdateReceived(@NonNull Trip trip) {
+               Log.d(TAG, "onTripUpdateReceived: " + trip);
+
+           }
+
+           @Override
+           public void onError(Exception e, String deviceId) {
+               Log.w(TAG, "onError: ", e);
+
+           }
+
+           @Override
+           public void onCompleted(String deviceId) {
+               Log.d(TAG, "onCompleted: " + deviceId);
+
+           }
+       }
+   );
 ```
+Likewise in case of one-time status query you'll receive updates object in a listener, that you pass
+into this method. Check out [documentation](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com)
+for available update object properties.
 Make sure you've stop updates, once you're done since you can end up with leaked websocket otherwise.
 
 ```
