@@ -1,12 +1,14 @@
-# HyperTrack Quickstart for Android Views SDK
+# Android Views SDK
 
-## Integrate the Vies SDK
- - [Add Hypertrack SDK](#step-1-add-hypertrack-views-sdk)
- - [Instantiate SDK](#step-2-instantiate-sdk)
+The Android Views SDK is used for getting live location and movement data for devices and trips directly to your Android app. This module subscribes to HyperTrack's GraphQL server end points to get data streams and then renders it in useful callbacks for app developers to build beautiful tracking experiences. This helps developers creating live location views go serverless. Their app users can directly get data securely and privately from the HyperTrack servers.
+
+## Integrate the Views SDK
+ - [Add Views SDK](#step-1-add-views-sdk)
+ - [Instantiate](#step-2-instantiate)
  - [Get state](#step-3-get-state)
  - [Subscribe to updates](#step-4-subscribe-to-updates)
 
-#### Step 1. Add Hypertrack Views SDK
+#### Step 1. Add Views SDK
 Add following lines to your applications `build.gradle`:
 ```
 // Import the SDK within your repositories block
@@ -18,20 +20,20 @@ repositories {
     ...
 }
 
-//Add HyperTrack Vies SDK as a dependency
+//Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.1.0'
+    implementation 'com.hypertrack:hypertrack-views:0.2.0'
     ...
 }
 ```
 
-#### Step 2. Instantiate SDK.
+#### Step 2. Instantiate
 Pass `Context` reference to get SDK instance.
 ```
    HyperTrackData hypertrackView = HyperTrackData.getInstance(this, PUBLISHABLE_KEY);
 ```
 
-#### Step 3. Get state.
+#### Step 3. Get state
 Get current state of tracked device
 ```
    hypertrackView.getDeviceMovementStatus(deviceId,
@@ -46,7 +48,7 @@ In callback, that you pass as a second argument, you'll receive [MovementStatus]
 object that encapsulates various data describing device state.
 Check out [docs](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com) for data that is available.
 
-#### Step 4. Subscribe to updates.
+#### Step 4. Subscribe to updates
 You can receive device state changes updates
 ```
    hypertrackView.subscribeToDeviceUpdates(deviceId,
