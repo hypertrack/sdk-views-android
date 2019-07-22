@@ -30,7 +30,7 @@ dependencies {
 #### Step 2. Instantiate
 Pass `Context` reference to get SDK instance.
 ```
-   HyperTrackData hypertrackView = HyperTrackData.getInstance(this, PUBLISHABLE_KEY);
+   HyperTrackViews hypertrackView = HyperTrackViews.getInstance(this, PUBLISHABLE_KEY);
 ```
 
 #### Step 3. Get state

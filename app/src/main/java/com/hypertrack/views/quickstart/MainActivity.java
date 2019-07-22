@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.hypertrack.sdk.views.DeviceUpdatesHandler;
-import com.hypertrack.sdk.views.HyperTrackData;
+import com.hypertrack.sdk.views.HyperTrackViews;
 import com.hypertrack.sdk.views.dao.Location;
 import com.hypertrack.sdk.views.dao.MovementStatus;
 import com.hypertrack.sdk.views.dao.StatusUpdate;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String PUBLISHABLE_KEY = null; // declare your key here
-    private HyperTrackData mHyperTrackData;
+    private HyperTrackViews mHyperTrackData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume: ");
 
-        mHyperTrackData = HyperTrackData.getInstance(this, PUBLISHABLE_KEY);
+        mHyperTrackData = HyperTrackViews.getInstance(this, PUBLISHABLE_KEY);
         mHyperTrackData.getDeviceMovementStatus("A4005505-D469-481E-AD2E-123456789AB",
                 new Consumer<MovementStatus>() {
                     @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onBatteryStateUpdateReceived(@BatteryState int i) {
+                    public void onBatteryStateUpdateReceived(@MovementStatus.BatteryState int i) {
                         Log.d(TAG, "onBatteryStateUpdateReceived: " + i);
                     }
 
