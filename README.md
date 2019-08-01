@@ -44,7 +44,7 @@ Get current state of tracked device
                                       public void accept(MovementStatus movementStatus) {
                                           Log.d(TAG, "Got movement status data " + movementStatus);
                                       }
-                                  });;
+                                  });
 ```
 In callback, that you pass as a second argument, you'll receive [MovementStatus](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com)
 object that encapsulates various data describing device state.
