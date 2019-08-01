@@ -107,6 +107,8 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 - [How do I get the DeviceID](#get-device-id)
 - [The views SDK doesn't give me views!](#not-only-views-in-views)
 - [How to manage multiple devices?](#track-multiple-devices)
+- [How do I subscribe to a specific Trip via onTripUpdateReceived?
+   Will I get an update for creation, re-calculation, and delay of Trips?](#trips-tracking)
 
 #### Supported versions
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat)
@@ -131,3 +133,8 @@ to upcoming library releases.
 You can subscribe to more than one device by executing `subscribeToDeviceUpdates` multiple times with
 different device ids. Subscription updates consumer can be the same (e.g. map fragment), since each
 update has device id field for identification.
+
+#### Trips Tracking
+Each trip has a device id, for which it was created, pass that id to `subscribeToDeviceUpdates` and 
+you'll receive all the trip recalculations and delays into `onTripUpdateReceived` callback.
+ 
