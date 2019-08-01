@@ -104,7 +104,17 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 
 ## FAQ
 - [What API levels (Android versions) are supported](#supported-versions)
-
+- [How do I get the DeviceID](#get-device-id)
 
 #### Supported versions
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat)
+
+
+#### Get device id
+Device id is a way to reference particular device, that is tracked by HyperTrack SDK.
+Generally, it's your application logic which devices should be displayed and how to filter/prioritize/select
+the one you need to track. If you have doubts regarding how to integrate HyperTrack SDK - look into
+corresponding [quickstart section](https://github.com/hypertrack/quickstart-android#integrate-the-sdk). 
+Once integration is done, device id can be obtained via `HyperTrack.getDevcieid()` call on initialized SDK.
+
+ 
