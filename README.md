@@ -105,6 +105,7 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 ## Frequently Asked Questions
 - [What API levels (Android versions) are supported](#supported-versions)
 - [How do I get the DeviceID](#get-device-id)
+- [The views SDK doesn't give me views!](#not-only-views-in-views)
 
 #### Supported versions
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat)
@@ -117,3 +118,10 @@ the one you need to track. If you have doubts regarding how to integrate HyperTr
 corresponding [quickstart section](https://github.com/hypertrack/quickstart-android#integrate-the-sdk).
 Once integration is done, device id can be obtained via `HyperTrack.getDevcieid()` call on initialized SDK.
 
+#### Not Only Views in Views
+Although view is associated with something, that should be visual, here it means view on data, that
+you retrieve from [HyperTrack SDK](https://github.com/hypertrack/quickstart-android). Tricky part is
+that application success nowadays is highly dependends on quality of user experience, that is hardly
+achievable without fine-grained tuning of UI elements. So using real-time data pushed to your device,
+you can build exactly the same views you really want. Anyway, ready to use UI elements will be added
+to upcoming library releases.
