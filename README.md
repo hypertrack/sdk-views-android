@@ -1,8 +1,8 @@
 # Android Views SDK
 
 The Android Views SDK is used for getting live location and movement data for devices and trips directly to your Android app. This module subscribes to HyperTrack's GraphQL server end points to get data streams and then renders it in useful callbacks for app developers to build beautiful tracking experiences. This helps developers creating live location views go serverless. Their app users can directly get data securely and privately from the HyperTrack servers.
-## [Integrate the Views SDK](integrate-the-views-sdk)
-## [FAQ](faq)
+## [Integrate the Views SDK](#integrate-the-views-sdk)
+## [FAQ](#frequently-asked-questions)
 
 ## Integrate the Views SDK
  - [Add Views SDK](#step-1-add-views-sdk)
@@ -102,7 +102,7 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 #### You are all set
 
 
-## FAQ
+## Frequently Asked Questions
 - [What API levels (Android versions) are supported](#supported-versions)
 - [How do I get the DeviceID](#get-device-id)
 
@@ -114,7 +114,6 @@ Currently we do support all of the Android versions starting from API 19 (Androi
 Device id is a way to reference particular device, that is tracked by HyperTrack SDK.
 Generally, it's your application logic which devices should be displayed and how to filter/prioritize/select
 the one you need to track. If you have doubts regarding how to integrate HyperTrack SDK - look into
-corresponding [quickstart section](https://github.com/hypertrack/quickstart-android#integrate-the-sdk). 
+corresponding [quickstart section](https://github.com/hypertrack/quickstart-android#integrate-the-sdk).
 Once integration is done, device id can be obtained via `HyperTrack.getDevcieid()` call on initialized SDK.
 
- 
