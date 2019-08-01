@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String PUBLISHABLE_KEY = null; // declare your key here
-    private HyperTrackViews mHyperTrackData;
+    private HyperTrackViews mHyperTrackView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume: ");
 
-        mHyperTrackData = HyperTrackViews.getInstance(this, PUBLISHABLE_KEY);
-        mHyperTrackData.getDeviceMovementStatus("A4005505-D469-481E-AD2E-123456789AB",
+        mHyperTrackView = HyperTrackViews.getInstance(this, PUBLISHABLE_KEY);
+        mHyperTrackView.getDeviceMovementStatus("A4005505-D469-481E-AD2E-123456789AB",
                 new Consumer<MovementStatus>() {
                     @Override
                     public void accept(MovementStatus movementStatus) {
                         Log.d(TAG, "Got movement status data " + movementStatus);
                     }
                 });
-        mHyperTrackData.subscribeToDeviceUpdates("A4005505-D469-481E-AD2E-123456789AB",
+        mHyperTrackView.subscribeToDeviceUpdates("A4005505-D469-481E-AD2E-123456789AB",
                 new DeviceUpdatesHandler() {
                     @Override
                     public void onLocationUpdateReceived(@NonNull Location location) {
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-        mHyperTrackData.stopAllUpdates();
+        mHyperTrackView.stopAllUpdates();
     }
 
 }
