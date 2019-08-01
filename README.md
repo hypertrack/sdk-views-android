@@ -109,6 +109,7 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 - [How to manage multiple devices?](#track-multiple-devices)
 - [How do I subscribe to a specific Trip via onTripUpdateReceived?
    Will I get an update for creation, re-calculation, and delay of Trips?](#trips-tracking)
+- [What does 0 `BatteryState` means?](#battery-state-constants)
 
 #### Supported versions
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat)
@@ -135,6 +136,13 @@ different device ids. Subscription updates consumer can be the same (e.g. map fr
 update has device id field for identification.
 
 #### Trips Tracking
-Each trip has a device id, for which it was created, pass that id to `subscribeToDeviceUpdates` and 
+Each trip has a device id, for which it was created, pass that id to `subscribeToDeviceUpdates` and
 you'll receive all the trip recalculations and delays into `onTripUpdateReceived` callback.
- 
+
+
+#### Battery State Constants
+Using enums in Android is [discouraged](https://developer.android.com/topic/performance/reduce-apk-size#remove-enums),
+so we're using numerical values to represent BatteryState. Check out
+[reference](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
+for exact values meaning.
+
