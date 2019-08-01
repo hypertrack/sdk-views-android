@@ -106,6 +106,7 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 - [What API levels (Android versions) are supported](#supported-versions)
 - [How do I get the DeviceID](#get-device-id)
 - [The views SDK doesn't give me views!](#not-only-views-in-views)
+- [How to manage multiple devices?](#track-multiple-devices)
 
 #### Supported versions
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat)
@@ -125,3 +126,8 @@ that application success nowadays is highly dependends on quality of user experi
 achievable without fine-grained tuning of UI elements. So using real-time data pushed to your device,
 you can build exactly the same views you really want. Anyway, ready to use UI elements will be added
 to upcoming library releases.
+
+#### Track multiple devices
+You can subscribe to more than one device by executing `subscribeToDeviceUpdates` multiple times with
+different device ids. Subscription updates consumer can be the same (e.g. map fragment), since each
+update has device id field for identification.
