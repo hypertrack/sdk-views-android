@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final String PUBLISHABLE_KEY = null; // declare your key here
+    private static final String DEVICE_ID = "A4005505-D469-481E-AD2E-123456789AB"; // paste your device id here
+
     private HyperTrackViews mHyperTrackView;
 
     @Override
@@ -31,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "onResume: ");
 
         mHyperTrackView = HyperTrackViews.getInstance(this, PUBLISHABLE_KEY);
-        mHyperTrackView.getDeviceMovementStatus("A4005505-D469-481E-AD2E-123456789AB",
+        mHyperTrackView.getDeviceMovementStatus(DEVICE_ID,
                 new Consumer<MovementStatus>() {
                     @Override
                     public void accept(MovementStatus movementStatus) {
                         Log.d(TAG, "Got movement status data " + movementStatus);
                     }
                 });
-        mHyperTrackView.subscribeToDeviceUpdates("A4005505-D469-481E-AD2E-123456789AB",
+        mHyperTrackView.subscribeToDeviceUpdates(DEVICE_ID,
                 new DeviceUpdatesHandler() {
                     @Override
                     public void onLocationUpdateReceived(@NonNull Location location) {
