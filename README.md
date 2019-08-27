@@ -153,6 +153,7 @@ SDK _aar_ file size is 211.2Kb. But due to transitive dependencies, integration 
 Enabling minification results in 1.62Mb apk (vs 1.05Mb bytes for minified binary without library), so size increment is 585Kb. So 1.3Mb and 0.57Mb are upper bounds,
 but real size increment is going to be smaller, if some of transitive dependencies (e.g. support library or gson) are already used in your app.
 So apk size increment mainly depends on code minification and is somewhere between limits shown below:
+
 | minification  |    Upper bound  |   lower bound  |
 |---------------|-----------------|----------------|
 |    disabled   |      1.3Mb      |     0.211Mb    |
