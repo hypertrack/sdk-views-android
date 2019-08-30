@@ -24,7 +24,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.3.1'
+    implementation 'com.hypertrack:hypertrack-views:0.3.2'
     ...
 }
 ```
