@@ -156,5 +156,5 @@ So apk size increment mainly depends on code minification and is somewhere betwe
 
 | minification  |    Upper bound  |   lower bound  |
 |---------------|-----------------|----------------|
-|    disabled   |      1.3Mb      |     0.211Mb    |
-|    enabled    |      0.57Mb     |       n/a      |
+|    disabled   |      1.35Mb     |     0.264Mb    |
+|    enabled    |      0.58Mb     |       n/a      |
