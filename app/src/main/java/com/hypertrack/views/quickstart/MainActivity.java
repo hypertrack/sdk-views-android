@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.hypertrack.sdk.views.DeviceUpdatesHandler;
 import com.hypertrack.sdk.views.HyperTrackViews;
 import com.hypertrack.sdk.views.dao.Location;
@@ -31,20 +32,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume: ");
+        final Gson gson = new Gson();
 
         mHyperTrackView = HyperTrackViews.getInstance(this, PUBLISHABLE_KEY);
         mHyperTrackView.getDeviceMovementStatus(DEVICE_ID,
                 new Consumer<MovementStatus>() {
                     @Override
                     public void accept(MovementStatus movementStatus) {
-                        Log.d(TAG, "Got movement status data " + movementStatus);
+                        Log.d(TAG, "Got movement status data " + gson.toJson(movementStatus));
                     }
                 });
         mHyperTrackView.subscribeToDeviceUpdates(DEVICE_ID,
                 new DeviceUpdatesHandler() {
                     @Override
                     public void onLocationUpdateReceived(@NonNull Location location) {
-                        Log.d(TAG, "onLocationUpdateReceived: " + location);
+                        Log.d(TAG, "onLocationUpdateReceived: " + gson.toJson(location));
                     }
 
                     @Override
@@ -54,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onStatusUpdateReceived(@NonNull StatusUpdate statusUpdate) {
-                        Log.d(TAG, "onStatusUpdateReceived: " + statusUpdate);
+                        Log.d(TAG, "onStatusUpdateReceived: " + gson.toJson(statusUpdate));
                     }
 
                     @Override
                     public void onTripUpdateReceived(@NonNull Trip trip) {
-                        Log.d(TAG, "onTripUpdateReceived: " + trip);
+                        Log.d(TAG, "onTripUpdateReceived: " + gson.toJson(trip));
 
                     }
 
