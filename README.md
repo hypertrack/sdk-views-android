@@ -2,6 +2,7 @@
 
 The Android Views SDK is used for getting live location and movement data for devices and trips directly to your Android app. This module subscribes to HyperTrack's GraphQL server end points to get data streams and then renders it in useful callbacks for app developers to build beautiful tracking experiences. This helps developers creating live location views go serverless. Their app users can directly get data securely and privately from the HyperTrack servers.
 * [Integrate the Views SDK](#integrate-the-views-sdk)
+* [Do even more](#additional-possibilities)
 * [FAQ](#frequently-asked-questions)
 
 ## Integrate the Views SDK
@@ -24,7 +25,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.3.4'
+    implementation 'com.hypertrack:hypertrack-views:0.3.5'
     ...
 }
 ```
@@ -101,6 +102,19 @@ Make sure you've stop updates, once you're done since you can end up with leaked
 
 #### You are all set
 
+## Additional Possibilities
+
+#### You can also create trips from views sdk:
+```
+hypertrackView.createTrip(DEVICE_ID, 35.0476956, -90.028238, 50,
+                               "Elvis Presley Blvd, Memphis, TN 38116, United States",
+                               null, null, new Consumer<Trip>() {
+                                   @Override
+                                   public void accept(Trip trip) {
+                                       Log.d(TAG, "created trip " + gson.toJson(trip));
+                                   }
+                               });
+```
 
 ## Frequently Asked Questions
 - [What API levels (Android versions) are supported](#supported-versions)
