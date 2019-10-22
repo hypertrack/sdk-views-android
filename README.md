@@ -25,7 +25,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.3.5'
+    implementation 'com.hypertrack:hypertrack-views:0.3.6'
     ...
 }
 ```
@@ -47,9 +47,9 @@ Get current state of tracked device
                                       }
                                   });
 ```
-In callback, that you pass as a second argument, you'll receive [MovementStatus](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com)
+In callback, that you pass as a second argument, you'll receive [MovementStatus](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com/0.3.6/com/hypertrack/sdk/views/dao/MovementStatus.html)
 object that encapsulates various data describing device state.
-Check out [docs](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com) for data that is available.
+Check out [docs](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com/0.3.6/) for data that is available.
 
 #### Step 4. Subscribe to updates
 You can receive device state changes updates
@@ -78,8 +78,8 @@ You can receive device state changes updates
            }
 
            @Override
-           public void onError(Exception e, String deviceId) {
-               Log.w(TAG, "onError: ", e);
+           public void onError(Exception exception, String deviceId) {
+               Log.w(TAG, "onError: ", exception);
 
            }
 
@@ -92,7 +92,7 @@ You can receive device state changes updates
    );
 ```
 Likewise in case of one-time status query you'll receive updates object in a listener, that you pass
-into this method. Check out [documentation](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com)
+into this method. Check out [documentation](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com/0.3.6/)
 for available update object properties.
 Make sure you've stop updates, once you're done since you can end up with leaked websocket otherwise.
 
@@ -158,7 +158,7 @@ you'll receive all the trip recalculations and delays into `onTripUpdateReceived
 #### Battery State Constants
 Using enums in Android is [discouraged](https://developer.android.com/topic/performance/reduce-apk-size#remove-enums),
 so we're using numerical values to represent BatteryState. Check out
-[reference](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
+[reference](http://hypertrack-views-javadoc.s3-website-us-west-2.amazonaws.com/0.3.6/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
 for exact values meaning.
 
 #### SDK size

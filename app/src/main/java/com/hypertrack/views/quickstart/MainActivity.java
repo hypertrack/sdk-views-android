@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onError(Exception e, String deviceId) {
-                        Log.w(TAG, "onError: ", e);
+                    public void onError(Exception exception, String deviceId) {
+                        Log.w(TAG, "onError: ", exception);
 
                     }
 
