@@ -25,7 +25,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.3.6'
+    implementation 'com.hypertrack:hypertrack-views:0.6.0'
     ...
 }
 ```
@@ -47,9 +47,9 @@ Get current state of tracked device
                                       }
                                   });
 ```
-In callback, that you pass as a second argument, you'll receive [MovementStatus](https://hypertrack.github.io/sdk-views-android/javadoc/0.3.6/com/hypertrack/sdk/views/dao/MovementStatus.html)
+In callback, that you pass as a second argument, you'll receive [MovementStatus](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/com/hypertrack/sdk/views/dao/MovementStatus.html)
 object that encapsulates various data describing device state.
-Check out [docs](https://hypertrack.github.io/sdk-views-android/javadoc/0.3.6/) for data that is available.
+Check out [docs](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/) for data that is available.
 
 #### Step 4. Subscribe to updates
 You can receive device state changes updates
@@ -92,7 +92,7 @@ You can receive device state changes updates
    );
 ```
 Likewise in case of one-time status query you'll receive updates object in a listener, that you pass
-into this method. Check out [documentation](https://hypertrack.github.io/sdk-views-android/javadoc/0.3.6/)
+into this method. Check out [documentation](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/)
 for available update object properties.
 Make sure you've stop updates, once you're done since you can end up with leaked websocket otherwise.
 
@@ -124,7 +124,6 @@ hypertrackView.createTrip(DEVICE_ID, 35.0476956, -90.028238, 50,
 - [How do I subscribe to a specific Trip via onTripUpdateReceived?
    Will I get an update for creation, re-calculation, and delay of Trips?](#trips-tracking)
 - [What does 0 `BatteryState` means?](#battery-state-constants)
-- [What's the library size?](#sdk-size)
 
 #### Supported versions
 Currently we do support all of the Android versions starting from API 19 (Android 4.4 Kit Kat)
@@ -158,17 +157,6 @@ you'll receive all the trip recalculations and delays into `onTripUpdateReceived
 #### Battery State Constants
 Using enums in Android is [discouraged](https://developer.android.com/topic/performance/reduce-apk-size#remove-enums),
 so we're using numerical values to represent BatteryState. Check out
-[reference](https://hypertrack.github.io/sdk-views-android/javadoc/0.3.6/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
+[reference](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
 for exact values meaning.
 
-#### SDK size
-
-SDK _aar_ file size is 264Kb. But due to transitive dependencies, integration sample apk size increment is about 1.35Mb (from 1620766 bytes to 3040960 bytes).
-Enabling minification results in 1.64Mb apk (vs 1.05Mb bytes for minified binary without library), so size increment is 594Kb. So 1.35Mb and 0.58Mb are upper bounds,
-but real size increment is going to be smaller, if some of transitive dependencies (e.g. support library or gson) are already used in your app.
-So apk size increment mainly depends on code minification and is somewhere between limits shown below:
-
-| minification  |    Upper bound  |   lower bound  |
-|---------------|-----------------|----------------|
-|    disabled   |      1.35Mb     |     0.258Mb    |
-|    enabled    |      0.58Mb     |       n/a      |
