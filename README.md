@@ -25,7 +25,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.6.0'
+    implementation 'com.hypertrack:hypertrack-views:0.6.1'
     ...
 }
 ```
@@ -47,9 +47,9 @@ Get current state of tracked device
                                       }
                                   });
 ```
-In callback, that you pass as a second argument, you'll receive [MovementStatus](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/com/hypertrack/sdk/views/dao/MovementStatus.html)
+In callback, that you pass as a second argument, you'll receive [MovementStatus](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.1/com/hypertrack/sdk/views/dao/MovementStatus.html)
 object that encapsulates various data describing device state.
-Check out [docs](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/) for data that is available.
+Check out [docs](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.1/) for data that is available.
 
 #### Step 4. Subscribe to updates
 You can receive device state changes updates
@@ -92,7 +92,7 @@ You can receive device state changes updates
    );
 ```
 Likewise in case of one-time status query you'll receive updates object in a listener, that you pass
-into this method. Check out [documentation](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/)
+into this method. Check out [documentation](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.1/)
 for available update object properties.
 Make sure you've stop updates, once you're done since you can end up with leaked websocket otherwise.
 
@@ -157,6 +157,6 @@ you'll receive all the trip recalculations and delays into `onTripUpdateReceived
 #### Battery State Constants
 Using enums in Android is [discouraged](https://developer.android.com/topic/performance/reduce-apk-size#remove-enums),
 so we're using numerical values to represent BatteryState. Check out
-[reference](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.0/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
+[reference](https://hypertrack.github.io/sdk-views-android/javadoc/0.6.1/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
 for exact values meaning.
 
