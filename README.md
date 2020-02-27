@@ -25,7 +25,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.8.4'
+    implementation 'com.hypertrack:hypertrack-views:0.8.5'
     ...
 }
 ```
@@ -159,4 +159,3 @@ Using enums in Android is [discouraged](https://developer.android.com/topic/perf
 so we're using numerical values to represent BatteryState. Check out
 [reference](https://hypertrack.github.io/sdk-views-android/javadoc/0.8.0/constant-values.html#com.hypertrack.sdk.views.dao.MovementStatus.BATTERY_NORMAL)
 for exact values meaning.
-
