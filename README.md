@@ -24,7 +24,7 @@ repositories {
 
 //Add HyperTrack Views SDK as a dependency
 dependencies {
-    implementation 'com.hypertrack:hypertrack-views:0.8.7'
+    implementation 'com.hypertrack:hypertrack-views:0.8.10'
     ...
 }
 ```
@@ -46,9 +46,9 @@ Get current state of tracked device
                                       }
                                   });
 ```
-In callback, that you pass as a second argument, you'll receive [MovementStatus](https://hypertrack.github.io/sdk-views-android/javadoc/0.8.7/com/hypertrack/sdk/views/dao/MovementStatus.html)
+In callback, that you pass as a second argument, you'll receive [MovementStatus](https://hypertrack.github.io/sdk-views-android/javadoc/0.8.10/com/hypertrack/sdk/views/dao/MovementStatus.html)
 object that encapsulates various data describing device state.
-Check out [docs](https://hypertrack.github.io/sdk-views-android/javadoc/0.8.7/) for data that is available.
+Check out [docs](https://hypertrack.github.io/sdk-views-android/javadoc/0.8.10/) for data that is available.
 
 #### Step 4. Subscribe to updates
 You can receive device state changes updates
